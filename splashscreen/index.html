@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="styles/styling.css" rel="stylesheet" type="text/css">
+    <title>Splashscreen</title>
+  </head>
+  <body class="fade-in-all">
+
+    <!-- Splashscreen element-->
+    <div id="splash"></div>
+
+    <!-- JavaScript & JQuery links -->
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <!-- Popper.js movement engine-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
+    <!-- Javascript & JQuery Custom-->
+    <script>
+    // Function that changes the CSS dimensions for splashscreen using window element.
+    $.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (
+      ($(window).height() - $(this).outerHeight()) / 2) + 
+        $(window).scrollTop()) + "px"
+    );
+    this.css("left", Math.max(0, (
+      ($(window).width() - $(this).outerWidth()) / 2) + 
+        $(window).scrollLeft()) + "px"
+    );
+    return this;
+    }
+    // Show splashscreen element
+    $("#splash").show();
+    // Time it takes to show Content
+    setTimeout(function(){    
+      $("#splash").fadeOut();
+    }, 4000);
+    </script>
+  </body>
+</html>
